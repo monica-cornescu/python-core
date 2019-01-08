@@ -8,5 +8,3 @@ print(list3)
 print(list4)
 
 print(list1.insert(1, "Invalid pkt"))
-
-
