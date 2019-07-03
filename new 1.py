@@ -21,3 +21,11 @@ print(s4)
 print(s5)
 print(first_ip)
 print(second_ip)
+
+# replace a character inside a string with another and create a new string
+userBirthDate = input("Please enter your birthday like in the example: 21-of-May-2019: ")
+year = userBirthDate[-4:]
+print(year)
+futureYear = year.replace('1', '3')
+
+print('What if you could travel to the future to ', futureYear)

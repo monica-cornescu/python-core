@@ -1,5 +1,5 @@
-Notebook - User Input
-Section 2, Lecture 8
+#Notebook - User Input
+#Section 2, Lecture 8
 
     #User input
     input("Please enter the string you want to be printed out: ")
@@ -7,16 +7,16 @@ Section 2, Lecture 8
     #Saving the input to a variable
     user_says = input("Please enter the string you want to be printed out: ")
 	
-Notebook - Variables
-Section 2, Lecture 10
+#Notebook - Variables
+#Section 2, Lecture 10
 
     #Defining a variable
     my_var = 10 #type integer
     my_var = "Hello" #type string
     my_var = True #type boolean
 
-Notebook - Strings
-Section 3, Lecture 17
+#Notebook - Strings
+#Section 3, Lecture 17
 
     #Defining a string on multiple lines, using triple quotes and the line continuation character ( \ )
     my_string = '''this\
@@ -300,8 +300,8 @@ Section 4, Lecture 21
     a_list[::2] #adds a third element called step; skips every second element of the list
     a_list[::-1] #returns a_list's elements in reverse order
 	
-Notebook - Sets and Frozensets
-Section 6, Lecture 30
+#Notebook - Sets and Frozensets
+#Section 6, Lecture 30
 
     #Sets - unordered collections of unique elements
     set1 = {"1.1.1.1", "2.2.2.2", "3.3.3.3", "4.4.4.4"} #creating a set
@@ -356,8 +356,8 @@ Section 6, Lecture 30
      
     set1.clear() #clearing a set; the result is an empty set
 
-Notebook - Tuples
-Section 7, Lecture 33
+#Notebook - Tuples
+#Section 7, Lecture 33
 
     #Tuples - immutable lists (their contents cannot be changed by adding, removing or replacing elements)
     my_tuple = () #creating an empty tuple
@@ -417,10 +417,454 @@ Section 7, Lecture 33
     list(r)[2:5]    #slicing a range by using the list() function first
     [2, 3, 4]   #the result
 
+#Notebook - Dictionaries and Conversions Between Data Types
+#Section 9, Lecture 40
+
+# Dictionaries - a dictionary is an unordered set of key-value pairs
+dict1 = {}  # creating an empty dictionary
+
+dict1 = {"Vendor": "Cisco", "Model": "2600", "IOS": "12.4", "Ports": "4"}
+
+dict1["IOS"]  # returns "12.4"; extracting a value for a specified key
+
+dict1["IOS"] = "12.3"  # modifies an existing key-value pair
+
+dict1["RAM"] = "128"  # adds a new key-value pair to the dictionary
+
+del dict1["Ports"]  # deleting a key-value pair from the dictionary
+
+len(dict1)  # returns the number of key-value pairs in the dictionary
+
+"IOS" in dict1  # verifies if "IOS" is a key in the dictionary
+
+"IOS2" not in dict1  # verifies if "IOS2" is not a key in the dictionary
+
+# Dictionaries - methods
+dict1.keys()  # returns a list having the keys in the dictionary as elements
+
+dict1.values()  # returns a list having the values in the dictionary as elements
+
+dict1.items()  # returns a list of tuples, each tuple containing the key and value of each dictionary pair
+
+# Conversions between data types
+str()  # converting to a string
+int()  # converting to an integer
+float()  # converting to a float
+list()  # converting to a list
+tuple()  # converting to a tuple
+set()  # converting to a set
+bin()  # converting to a binary representation
+hex()  # converting to a hexadecimal representation
+int(variable, 2)  # converting from binary back to decimal
+int(variable, 16)  # converting from hexadecimal back to decimal
+
+# Notebook - If / Elif / Else Conditionals
+# Section 10, Lecture 42
+
+# If / Elif / Else conditionals - executing code based on one or more conditions being evaluated as True or False; the "elif" and "else" clauses are optional
+x = 5
+
+if x > 5:  # if the "x > 5" expression is evaluated as True, the code indented under the "if" clause gets executed, otherwise the execution jumps to the "elif" clause...
+    print("x is greater than 5")
+elif x == 5:  # ...if the "x == 5" expression is evaluated as True, the code indented under the "elif" clause gets executed, otherwise the execution jumps to the "else" clause
+    print("x IS 5")
+else:  # this covers all situations not covered by the "if" and "elif" clauses; the "else" clause, if present, is always the last clause in the code block
+    print("x is NOT greater than 5")
+
+# result of the above "if" block
+x IS 5
+
+# Notebook - While / While - Else Loops
+# Section 10, Lecture 46
+
+# While / While Else loops - a while loop executes as long as an user-specified condition is evaluated as True; the "else" clause is optional
+x = 1
+
+while x <= 10:
+    print(x)
+    x += 1
+else:
+    print("Out of the while loop. x is now greater than 10")
+
+# result of the above "while" block
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Out of the while loop.x is now greater than 10
+
+# If / For / While Nesting
+x = "Cisco"
+
+if "i" in x:
+    if len(x) > 3:  # if nesting
+        print(x, len(x))
+
+Cisco
+5  # result of the above block
+
+list1 = [4, 5, 6]
+list2 = [10, 20, 30]
+for i in list1:
+    for j in list2:  # for nesting
+        print(i * j)
+
+x = 1
+while x <= 10:
+    z = 5
+    x += 1
+    while z <= 10:  # while nesting
+        print(z)
+        z += 1
+
+for number in range(10):
+    if 5 <= number <= 9:  # mixed nesting
+        print(number)
 
 
+# Break, Continue, Pass
+list1 = [4, 5, 6]
+list2 = [10, 20, 30]
+
+for i in list1:
+    for j in list2:
+        if j == 20:
+            break  # stops the execution here, ignores the print statement below and completely quits THIS "for" loop; however, it doesn't quit the outer "for" loop, too!
+        print(i * j)
+    print("Outside the nested loop")
+
+# result of the above block
+40
+Outside the nested loop
+50
+Outside the nested loop
+60
+Outside the nested loop
+
+list1 = [4, 5, 6]
+list2 = [10, 20, 30]
+
+for i in list1:
+    for j in list2:
+        if j == 20:
+            continue  # ignores the rest of the code below for the current iteration, then goes up to the top of the loop (inner "for") and starts the next iteration
+        print(i * j)
+    print("Outside the nested loop")
+
+# result of the above block
+40
+120
+Outside the nested loop
+50
+150
+Outside the nested loop
+60
+180
+Outside the nested loop
+
+for i in range(10):
+    pass  # pass is the equivalent of "do nothing"; it is actually a placeholder for when you just want to write a piece of code that you will treat later
+
+# Try / Except / Else / Finally - handling an exception when it occurs and telling Python to keep executing the rest of the lines of code in the program
+    try:
+        print(4 / 0)  # in the "try" clause you insert the code that you think might generate an exception at some point
+    except ZeroDivisionError as e:
+        print(e, "--> Division Error!")  # specifying what exception types Python should expect as a consequence of running the code inside the "try" block and how to handle them
+    else:
+        print("No exceptions raised by the try block!")  # executed if the code inside the "try" block raises NO exceptions
+    finally:
+        print("I don't care if an exception was raised or not!")  # executed whether the code inside the "try" block raises an exception or not
+
+    # result of the above block
+    division by zero --> Division Error!
+    I don't care if an exception was raised or not!
 
 
+    # Functions - Basics
+    def my_first_function(x, y):  # defining a function that takes two parameters
+        sum = x + y
+        return sum  # this statement is used to exit a function and return something when the function is called
 
 
+    my_first_function(1, 2)  # calling a function and passing two POSITIONAL arguments, the values of 1 and 2; result is 3
 
+    my_first_function(x=1, y=2)  # calling a function and passing two KEYWORD arguments, the values of 1 and 2; result is 3
+
+    my_first_function(1, y=2)  # calling a function and passing mixed types of arguments, the values of 1 and 2; result is 3; rule: positional arguments always before keyword arguments!
+
+
+    def my_first_function(x, y, z=3):  # specifying a default parameter value in a function definition
+
+
+    def my_first_function(x, *args)  # specifying a variable number of positional parameters in a function definition; args is a tuple
+
+
+    def my_first_function(x, **kwargs)  # specifying a variable number of keyword parameters in a function definition; args is a tuple
+
+
+    global my_var  # "importing" a variable in the global namespace to the local namespace of a function
+
+
+# Modules and importing - Basics
+    import \
+        sys  # importing the sys module; the import statements should be placed before any other code in your application
+
+    from math import pi  # importing only a variable (pi) from the math module
+
+    from math import \
+        sin  # importing only a function (sin()) from the math module; there's no need to add the parantheses of the function when importing it
+
+    from math import *  # importing all the names (variables and functions) from the math module
+
+    # Files - opening and reading a file
+    myfile = open("routers.txt",
+                  "r")  # "r" is the file access mode for reading and it is the default mode when opening a file
+
+    myfile.mode  # checking the mode in which a file has been opened
+
+    myfile.read()  # method that returns the entire content of a file in the form of a string
+
+    myfile.read(5)  # returning only the first 5 characters (bytes) in the file
+
+    myfile.seek(0)  # moving the cursor at the beginning of the file
+
+    myfile.tell()  # checking the current position of the cursor inside the file
+
+    myfile.readline()  # returns the file content one line a ta time, each time you use the method
+
+    myfile.readlines()  # returns a list where each element is a line in the file
+
+    # Files - writing and appending to a file
+    newfile = open("newfile.txt",
+                   "w")  # opens/creates a new file for writing; the "w" method also creates the file for writing if the file doesn’t exist and overrides the file if the file already exists; remember to close the file after writing to it to save the changes!
+
+    newfile.writelines(["Cisco", "Juniper", "HP",
+                        "\n"])  # this method takes a sequence of strings as an argument and writes those strings to the file
+
+    newfile = open("newfile.txt", "a")  # opening a file for appending
+
+    newfile = open("newfile.txt", "w+")  # opens a file for both writing and reading at the same time
+
+    newfile = open("newfile.txt", "x")  # opens for exclusive creation, failing if the file already exists
+
+    # Files - closing a file
+    newfile.closed  # checking if a file is closed
+
+    newfile.close()  # closing a file
+
+    with open("python.txt", "w") as f: # using the with-as solution, the files gets closed automatically, without needing the close() method
+        f.write("Hello Python!\n")
+
+    # Regular Expressions - the "re.match" and "re.search" methods
+    a = re.match(pattern, string, optional flags)  # general match syntax; "a" is called a match object if the pattern is found in the string, otherwise "a" will be None
+
+    mystr = "You can learn any programming language, whether it is Python2, Python3, Perl, Java, javascript or PHP."
+
+    import re  # importing the regular expressions module
+
+    a = re.match("You", mystr)  # checking if the characters "You" are indeed at the beginning of the string
+
+    a.group()  # result is 'You'; Python returns the match it found in the string according to the pattern we provided
+
+    a = re.match("you", mystr, re.I)  # re.I is a flag that ignores the case of the matched characters
+
+    a = re.search(pattern, string, optional flags)  # general search syntax; searching for a pattern throughout the entire string; will return a match object if the pattern is found and None if it's not found
+
+    arp = "22.22.22.1      0         b4:a9:5a:ff:c8:45 VLAN#222             L"
+
+    a = re.search(r"(.+?) +(\d) +(.+?)\s{2,}(\w)*", arp)  # result is '22.22.22.1'; 'r' means the pattern should be treated like a raw string; any pair of parentheses indicates the start and the end of a group; if a match is found for the pattern inside the parentheses, then the contents of that group can be extracted with the group() method applied to the match object; in regex syntax, a dot represents any character, except a new line character; the plus sign means that the previous expression, which in our case is just a dot, may repeat one or more times; the question mark matching as few characters as possible
+
+    a.groups()  # returns all matches found in a given string, in the form of a tuple, where each match is an element of that tuple
+    ('22.22.22.1', '0', 'b4:a9:5a:ff:c8:45 VLAN#222', 'L')
+
+    # Regular Expressions - the "re.findall" and "re.sub" methods
+    a = re.findall(r"\d\d\.\d{2}\.[0-9][0-9]\.[0-9]{1,3}", arp)  # returns a list where each element is a pattern that was matched inside the target string
+    ['22.22.22.1']  # result of the above operation - a list with only one element, the IP address matched by the regex
+
+    b = re.sub(r"\d", "7", arp)  # replaces all occurrences of the specified pattern in the target string with a string you enter as an argument
+    '77.77.77.7      7         b7:a7:7a:ff:c7:77 VLAN#777             L   77.77.77.77'  # result of the above operation
+
+
+### Hi Mihai! Great course so far! Here to prove that the searched pattern has to be exactly at the begining of the string, in order for tha match function to fin it, I think that it would be better if you would search for the pattern "ou" instead of abc. I did that for practice. But I think it would be a more useful example. Thank you!
+
+    # Classes and objects
+    class MyRouter(object)  # creating a class which inherts from the default "object" class
+        def __init__(self, routername, model, serialno, ios):  # class constructor; initializing some variables and the method is called whenever you create a new instance of the class
+            self.routername = routername  # "self" is a reference to the current instance of the class
+            self.model = model
+            self.serialno = serialno
+            self.ios = ios
+
+        def print_router(self, manuf_date):
+            print("The router name is: ", self.routername)
+            print("The router model is: ", self.model)
+            print("The serial number of: ", self.serialno)
+            print("The IOS version is: ", self.ios)
+            print("The model and date combined: ", self.model + manuf_date)
+
+
+    router1 = MyRouter('R1', '2600', '123456', '12.4')  # creating an object by simply calling the class name and entering the arguments required by the __init__ method in between parentheses
+
+    router1.model  # accessing the object's attributes; result is '2600'
+
+    router1.print_router("20150101")  # accessing a function (actually called method) from within the class
+    The router name is: R1
+    The router model is: 2600
+    The serial number of: 123456
+    The IOS version is: 12.4
+    The model and date combined: 260020150101
+
+    getattr(router2, "ios")  # getting the value of an attribute
+
+    setattr(router2, "ios", "12.1")  # setting the value of an attribute
+
+    hasattr(router2, "ios")  # checking if an object attribute exists
+
+    delattr(router2, "ios")  # deleting an attribute
+
+    isinstance(router2, MyRouter)  # verifying if an object is an instance of a particular class
+
+
+    class MyNewRouter(MyRouter):  # creating a new class (child) inheriting from the MyRouter parent class
+        ...
+
+
+    issubclass(MyNewRouter, MyRouter)  # returns True or False; checking if a class is the child of another class
+
+    # List / Set / Dictionary comprehensions
+    # Instead of...
+    list1 = []
+    for i in range(10):
+        j = i ** 2
+        list1.append(j)
+
+    # ...we can use a list comprehension
+    list2 = [x ** 2 for x in range(10)]
+
+    list3 = [x ** 2 for x in range(10) if x > 5]  # with a conditional statement
+
+    set1 = {x ** 2 for x in range(10)}  # set comprehension
+
+    dict1 = {x: x * 2 for x in range(10)}  # dictionary comprehension
+
+
+# Lambda functions - anonymous functions
+    lambda arg1, arg2, ..., arg n: an expression using the arguments  # general syntax
+
+    a = lambda x, y: x * y  # defining a lambda function
+
+    a(20, 10)  # result is 200; calling the lambda function
+
+
+    # Instead of...
+    def myfunc(list):
+        prod_list = []
+        for x in range(10):
+            for y in range(5):
+                product = x * y
+                prod_list.append(product)
+        return prod_list + list
+
+
+    # ...we can use a lambda function, a list comprehension and concatenation on a single line of code
+    b = lambda list: [x * y for x in range(10) for y in range(5)] + list
+
+
+# Map and Filter
+
+    # map() - takes a function and a sequence as arguments and applies the function to all the elements of the sequence, returning a list as the result
+    def product10(a):
+        return a * 10
+
+
+    list1 = range(10)
+
+    map(product10, list1)  # result is [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]; applying the product10() function to each element of list1
+    # or...
+    map((lambda a: a * 10), list1)  # result is [0, 10, 20, 30, 40, 50, 60, 70, 80, 90] as well
+
+    # filter() - takes a function and a sequence as arguments and extracts all the elements in the list for which the function returns True
+    filter(lambda a: a > 5, list1)  # result is [6, 7, 8, 9]
+
+# Iterators - an object which allows a programmer to traverse through all the elements of a collection
+    my_list = [1, 2, 3, 4, 5, 6, 7]
+
+    my_iter = iter(my_list)  # iter() returns an interator object
+
+    next(
+        my_iter)  # in Python 2 and 3, it returns the elements of a sequence one by one; raises StopIteration when the sequence is exhausted
+
+
+# Generators - special routines that can be used to control the iteration behavior of a loop; defined using the "def" keyword;
+    def my_gen(x, y):  # creating a generator function
+        for i in range(x):
+            print("i is %d" % i)
+            print("y is %d" % y)
+            yield i * y  # yields the values one at a time; traversing a sequence up to a certain point, getting the result and suspending the execution
+
+
+    my_object = my_gen(10, 5)  # creating a generator object
+
+    next(
+        my_object)  # manually yield the next element returned by the my_gen() function; raises StopIteration when the sequence is exhausted
+
+    gen_exp = (x for x in range(5))  # creating a generator expression; similar to list comprehensions, but using parentheses instead of square brackets
+
+    next(gen_exp)  # extracting each value in the list generated by range(5), one value at a time; raises StopIteration when the sequence is exhausted
+
+# Itertools - built-in Python module for working with iterable data sets
+import itertools
+
+list1 = [1, 2, 3, 'a', 'b', 'c']
+list2 = [101, 102, 103, 'X', 'Y']
+
+# chain() - takes several sequences and chains them together
+chain(list1, list2)
+
+list(chain(list1, list2))  # result is [1, 2, 3, 'a', 'b', 'c', 101, 102, 103, 'X', 'Y']
+
+# count() - returns an iterator that generates consecutive integers until you stop it, otherwise it will go on forever
+for i in count(10, 2.5):
+    if i <= 50:
+        print(i)
+    else:
+        break  # result is printing the numbers between 10 and 50 inclusively, with a step of 2.5
+
+# cycle() - returns an iterator that simply repeats the value given as argument infinitely; you have to find a way to break out of the infinite loop
+a = range(11, 16)
+
+for i in cycle(a):
+    print(i)  # use Ctrl+C to break out of the infinite loop
+
+# filterfalse() - returns the elements for which the function you give as argument returns False
+list(filterfalse(lambda x: x < 5, [1, 2, 3, 4, 5, 6, 7]))  # in Python 2 the result is [5, 6, 7]; in Python 3 there is no ifilter() like in Python 2, just filter() and filterfalse()
+
+# islice() - performs slicing; we can specify a starting point of the slice, an end point and a step
+
+# Decorators - functions that take another function as a parameter and extend its functionality and behavior without modifying it
+def my_decorator(target_function):
+    def function_wrapper():
+        return "Python is the " + target_function() + " programming language!"
+
+    return function_wrapper
+
+
+@my_decorator
+def target_function():
+    return "coolest"
+
+
+target_function()  # returns 'Python is the coolest programming language!'
+
+# Threading
+start()  # simply starts or initiates the thread
+
+join()  # makes sure the program waits for all threads to terminate
+
+    th = threading.Thread(target=myfunction)  # using the Thread class form the 'threading' module and telling it the target function to be executed using the 'target' argument
