@@ -1,2 +1,0 @@
-233.42.202.3 this is a channel from OPRA feed,
-a NYSE channel I also use is 224.0.59.204
