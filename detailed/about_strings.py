@@ -21,11 +21,11 @@ print(word)
 
 # Prefer concatenating strings with join
 colors_string = ";".join(["red", "blue", "green", "yellow"])
-print(colors_string)
+print("Useless string:", colors_string)
 colors_list = colors_string.split(";")
-print(colors_list)
+print("Reconstruct the list by splitting the string by ';':", colors_list)
 bedrijf = "".join(["jouw", "ICT", "vacature"])
-print(bedrijf)
+print("Make a string by joining elements of a list with no characters between them:", bedrijf)
 
 # partitioning produces a tuple, so it's often used in conjunction with tuple unpacking
 words = "unforgetable".partition("forget")
