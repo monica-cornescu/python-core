@@ -6,12 +6,22 @@ DIGIT_MAP = {'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4', 'fi
 
 
 def convert(s):
-    number = ''
-    for token in s:
-        number += DIGIT_MAP[token]
-    x = int(number)
+    try:
+        number = ''
+        for token in s:
+            number += DIGIT_MAP[token]
+        x = int(number)
+        print(f"Conversion succeeded! x = {x}")
+    except KeyError:
+        print("Conversion failed!")
+        x = -1
+    except TypeError:
+        print("Conversion failed!")
+        x = -1
     return x
 
 
 if __name__ == '__main__':
-    print(convert("one three three seven".split('')))
+    print(convert("one three three seven"))
+    print(convert("one three three seven".split()))
+    print(convert(734))
