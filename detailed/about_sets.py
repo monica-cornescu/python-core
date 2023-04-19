@@ -83,5 +83,18 @@ w = blond_hair.symmetric_difference(blue_eyes)
 if z == w:
     print(f"The people who either have blue_eyes but not blond_hair, or have blond_hair but not blue_eyes are: {z}")
 
+# 3 Predicate methods
+# check if one set is a subset of another
+if eats_pizza.issubset(drink_milk):
+    print("All the people who eat_pizza also drink_milk, and they are:", eats_pizza)
+
+# Check if a set is a superset of another (includes all the elements of another)
+if drink_milk.issuperset(eats_pizza):
+    print(f"From all the people who drink_milk, {drink_milk} some also eat_pizza: {eats_pizza}")
+
+# Test that 2 sets have no members in common
+if blood_0.isdisjoint(blood_A) and blood_B.isdisjoint(blood_AB):
+    print("This is normal, because a person has a single blood type")
+
 if __name__ == "__main__":
     print("Practice more with string operations!")
