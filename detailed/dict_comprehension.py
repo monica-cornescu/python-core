@@ -1,7 +1,7 @@
 """
-make a new dictionary with capital : country from a country : capital dictionary, with dictionaries comprehention
-make another dictionary from a list of words, some of which begin with the same letter; because the keys have to be
-unique, only the last key which starts with h will be kept
+make a new dictionary with capital : country from a country : capital dictionary, with dictionaries comprehension
+make a dictionary of starting letters, from a list of words, some of which begin with the same letter; because the keys
+have to be unique, only the last key which starts with h will be kept (keep in mind that the dict is unordered)
 """
 from pprint import pprint as pp
 
