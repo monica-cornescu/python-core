@@ -2,8 +2,8 @@
 These sequences are evaluated lazily (only compute the next element on demand)
 Generators contain at least an yield statement; might contain return with no arguments;
 There's an implicit return at the end of the definition
-Generators are good for modelling infinite or very large sequences (e.g. sensor readings, math sequences, content of l
-arge files
+Generators are good for modelling infinite or very large sequences (e.g. sensor readings, math sequences, content of
+large files
 Generators are single use objects. Each time we call a generator function we create a generator object.
 To recreate a generator from a generator expression you must execute the expression again.
 """
