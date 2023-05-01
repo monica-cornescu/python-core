@@ -1,4 +1,4 @@
-""" practise with generators: create iterables with functions
+""" practise with generators = create iterables with functions
 These sequences are evaluated lazily (only compute the next element on demand)
 Generators contain at least an yield statement; might contain return with no arguments;
 There's an implicit return at the end of the definition

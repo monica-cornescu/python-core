@@ -3,6 +3,7 @@ Common builtin iterator operations: enumerate() - produces integer indexes, sum(
 itertools module
 """
 from itertools import islice
+from filter_comprehensions_is_prime import is_prime
 
 # generator expression which yields a list of the first 1 mil square numbers
 million_squares = (x * x for x in range(1, 1000001))
