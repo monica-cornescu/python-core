@@ -20,12 +20,18 @@ Beware: In some languages r must be without duplicates.
 
 # put words in a set, to remove duplicates, then make a list of it and order it
 def in_array(array1, array2):
-    s = set()
+    # s = set()
+    # for word in array1:
+    #     for long_word in array2:
+    #         if word in long_word:
+    #             s.add(word)
+    # return sorted(s)
+    words = []
     for word in array1:
         for long_word in array2:
-            if word in long_word:
-                s.add(word)
-    return sorted(s)
+            if word in long_word and word not in words:
+                words.append(word)
+    return sorted(words)
 
 
 if __name__ == '__main__':
